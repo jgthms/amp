@@ -1,0 +1,50 @@
+html
+  background: white
+  font-size: $size-default
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  min-width: 300px
+  text-rendering: optimizeLegibility
+
+body
+  color: $text
+  font-family: $font-family-primary
+  font-size: 1rem
+  letter-spacing: -0.04em
+  line-height: 1.25
+
+a
+  color: $link
+  cursor: pointer
+  text-decoration: none
+  transition: all $speed $easing
+
+amp-img,
+img
+  max-height: 100%
+  max-width: 100%
+
+strong
+  color: $title
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section
+  display: block
+
+pre
+  white-space: pre
+  word-wrap: normal
+
+.container
+  margin: 0 auto
+  max-width: 940px
+  position: relative
+
++selection
+  background: $link
+  color: white

@@ -1,0 +1,419 @@
+.articles
+  padding-top: $offset-mobile
+  position: relative
+  hr
+    border-top: 1px solid $border
+    display: block
+    margin: 0
+  .article
+    padding: 20px
+    padding-left: 40px
+    position: relative
+    .fa-star
+      color: $yellow
+      font-size: 21px
+      left: 12px
+      position: absolute
+      top: 23px
+    .info
+      float: right
+      padding-top: 4px
+      text-align: right
+    .title
+      a
+        color: $title
+        &:hover
+          background: $link
+          color: white
+        &:visited
+          color: $visited
+          &:hover
+            color: white
+    .introduction
+      margin-top: 5px
+    &.recommended
+      .title
+        font-weight: bold
+    & + .article
+      border-top: 1px solid $border
+  +on($desktop)
+    padding-top: $offset-desktop
+    hr
+      margin: 0 0 0 160px
+    .article
+      margin-left: 160px
+      padding: 20px 0
+      .fa-star
+        left: -28px
+  &.only-recommended
+    .article:not(.recommended)
+      background: $background
+      padding-top: 5px
+      padding-bottom: 5px
+      .info,
+      .title,
+      .introduction
+        display: none
+
+.console
+  .item
+    border-top: 1px solid $border
+    padding: 20px
+    position: relative
+    &:last-child
+      margin-bottom: 0
+    .rank
+      float: right
+    .name
+      @extend .title
+      font-weight: bold
+    .developer
+      @extend .subtitle
+      margin: 5px 0 20px
+    .link
+      margin-bottom: 20px
+  +on($desktop)
+    .item
+      min-height: 421px
+      padding: $offset $offset $offset 400px
+      .rank
+        left: 0
+        position: absolute
+        top: $offset
+      .cover
+        left: 80px
+        max-width: 300px
+        position: absolute
+        top: $offset
+      .name
+        font-size: $size-h1 !important // @extend priority BS
+      .developer
+        font-size: $size-h3
+
+.favourites
+  padding-top: $offset-mobile
+  .container > .title
+    font-size: $size-h1
+    margin-bottom: 20px
+  +on($desktop)
+    padding-top: $offset-desktop
+
+.hello
+  height: 100vh
+  overflow: hidden
+  position: relative
+  width: 100%
+  .hello-previous,
+  .hello-next
+    display: none
+    height: 60px
+    left: 0
+    line-height: 60px
+    position: absolute
+    text-align: center
+    width: 100%
+    a
+      display: block
+  .hello-next
+    bottom: 0
+  .hello-previous
+    top: 0
+  .hello-background,
+  .hello-screenshot
+    +overlay
+    bottom: auto
+    display: none
+    height: 600px
+    left: auto
+    margin-top: -300px
+    position: absolute
+    right: -25%
+    top: 50%
+    width: 100%
+  .hello-content
+    display: table
+    height: 100vh
+    position: relative
+    vertical-align: middle
+    width: 100%
+    z-index: 1
+  .hello-screenshot
+    amp-img
+      animation: jelly-pop 1000ms 1000ms linear both
+      left: 50%
+      opacity: 0
+      position: absolute
+      top: 50%
+  .hello-text
+    display: table-cell
+    padding: 0 40px
+    position: relative
+    vertical-align: middle
+    .title
+      color: $text
+      margin-bottom: $size-h1
+      a
+        +grow($improbable)
+        color: white
+        padding: 0 0.25em 0.05em
+        white-space: nowrap
+        &:before
+          border-radius: 0
+          opacity: 1
+        span
+          position: relative
+        &:hover
+          &:before
+            bottom: -10px
+            left: -10px
+            right: -10px
+            top: -10px
+      strong
+        font-weight: bold
+      @media screen and (min-height: 400px) and (min-width: 600px)
+        font-size: $size-h1
+      @media screen and (min-height: 600px) and (min-width: 800px)
+        font-size: $size-h1-desktop
+      @media screen and (min-height: 800px) and (min-width: 1000px)
+        font-size: $size-h1-widescreen
+    .subtitle
+      margin-top: 20px
+  &:first-child
+    .hello-text
+      padding-top: 60px
+  &.hello-improbable
+    .hello-background
+      background-image: radial-gradient(ellipse farthest-side at 29% 29%, saturate($improbable, 100%), saturate(lighten($improbable, 10%), 100%))
+      +hello-gradient($improbable, lighten($improbable, 10%))
+    .hello-screenshot amp-img
+      height: 275px
+      margin: -153px 0 0 -219px
+  &.hello-marksheet
+    .hello-background
+      +hello-gradient($marksheet, $marksheet-dark)
+    .hello-screenshot amp-img
+      height: 322px
+      margin: -172px 0 0 -334px
+    .title a
+      +grow($marksheet)
+      &:before
+        border-radius: 0
+        opacity: 1
+  &.hello-ivan-ballini
+    .hello-background
+      +hello-gradient($brique, $beige)
+    .hello-screenshot amp-img
+      height: 408px
+      margin: -261px 0 0 -270px
+    .title a
+      +grow($brique)
+      &:before
+        border-radius: 0
+        opacity: 1
+  +on($desktop)
+    .hello-background,
+    .hello-screenshot
+      display: block
+    .hello-text
+      .title
+        padding-right: 50%
+      .follow
+        .title
+          padding-right: 0
+
+.post
+  padding: $offset-mobile 20px 20px
+  position: relative
+  .info
+    float: right
+    margin: 0 0 20px 20px
+    text-align: right
+  .title
+    font-size: $size-h1
+    font-weight: bold
+  .introduction
+    font-size: $size-h2
+    margin: 5px 0 60px
+  +on($desktop)
+    padding: $offset-desktop 0
+    .container
+      padding: 0 80px
+    .info
+      margin-bottom: 0
+
+.projects
+  padding-top: $offset-mobile
+  .project
+    overflow: hidden
+    padding: 30px
+    position: relative
+    .device
+      display: none
+    .date
+      margin-bottom: 20px
+      position: relative
+      &:after
+        background: white
+        bottom: -10px
+        content: ""
+        display: block
+        height: 1px
+        left: 0
+        position: absolute
+        width: 60px
+    .logo
+      height: 200px
+      margin-bottom: 20px
+      img
+        display: block
+    .title
+      color: $title
+      font-weight: bold
+    .url
+      margin: 5px 0 20px
+    .content
+      color: inherit
+      font-size: $size-default
+      p
+        margin: 0
+        & + p
+          margin-top: 10px
+    .icons
+      margin-top: 20px
+      opacity: 0.48
+    &.bulma
+      +project(#f5f7fa, #69707a, #222324, #222324, #1fc8db)
+    &.marksheet
+      +project($marksheet, #f4f1ce, white)
+      background-color: $marksheet
+      text-shadow: 0 1px 2px rgba(black, .2)
+    &.barn-dor
+      +project(#121212, #69707a, #ebb550, white)
+    &.ivan-ballini
+      +project($ivan-background, $ivan-text, $ivan-link, $ivan-title)
+    &.css-off-2013
+      +project(#cdc9dd, #6e6c77, white, black)
+    &.juketube
+      +project(#eee, #888, #df1f1f, #22242a)
+    &.bbxdesign
+      +project(#f5574c, rgba(white, 0.71), white)
+    &.cambodia-vietnam-2010
+      +project(#dacfb1, #6b6450, #914839, #485c39, #3b5757)
+    &.yeek
+      +project(#eeeff2, #4c566c, #0589f5, #040404)
+    &.editions-magellan
+      +project(#332003, rgba(white, 0.29), #c78312, white)
+    &.bbxworld
+      +project(#362f2d, rgba(white, 0.48), #8dc63f, white)
+  +on($desktop)
+    padding-top: $offset-desktop
+    .project
+      height: 100vh
+      min-height: 620px
+      padding: 0
+      width: 100%
+      .device
+        display: block
+        left: 50%
+        position: absolute
+        top: 50%
+        transform: scale(0.5) translate3d(80px, -100%, 0)
+        transform-origin: left center
+        &.ipad-h,
+        &.ipad-v
+          transform: scale(0.75) translate3d(80px, -62.5%, 0)
+      .title
+        font-size: $size-h1
+      .container
+        display: table
+        height: 100vh
+        min-height: 620px
+        width: 100%
+        .project-content
+          display: table-cell
+          padding-right: 50%
+          vertical-align: middle
+          width: 100%
+
+=switch
+  display: inline-block
+  text-align: center
+  vertical-align: top
+
+.switch
+  +switch
+  border: 1px solid $border
+  border-radius: 3px
+  color: $text
+  cursor: pointer
+  display: block
+  margin: 20px auto 0
+  padding: 10px 95px 10px 15px
+  position: relative
+  width: 240px
+  .switch-label
+    +switch
+    font-style: normal
+    position: relative
+    &:after
+      color: $title
+      content: "?"
+      left: 104%
+      position: absolute
+  .switch-gear
+    +switch
+    background: $background
+    border-radius: 20px
+    box-shadow: inset 0 1px 2px rgba(black, 0.14), inset 0 0 0 1px $border
+    color: $text
+    font-size: $size-small
+    height: 30px
+    line-height: 30px
+    overflow: hidden
+    position: absolute
+    right: 5px
+    top: 5px
+    width: 70px
+    .switch-rail
+      +clearfix
+      display: block
+      height: 30px
+      transform: translate3d(-40px, 0, 0)
+      transition: all $speed $easing
+      width: 110px
+      .switch-yes,
+      .switch-thumb,
+      .switch-no
+        +switch
+        float: left
+        height: 30px
+        width: 40px
+      .switch-yes
+        padding-right: 10px
+        text-align: right
+      .switch-thumb
+        background: white
+        border-radius: 50%
+        box-shadow: inset 0 0 0 1px $border
+        width: 30px
+      .switch-no
+        padding-left: 10px
+        text-align: left
+  &:hover
+    border-color: $title
+    color: $title
+  &.is-active,
+  &.is-active:hover
+    border-color: $green
+    color: $title
+    .switch-label
+      &:after
+        animation: jelly-pop 1000ms linear both
+        color: $green
+        content: "!"
+    .switch-gear
+      background: $green
+      box-shadow: inset 0 1px 2px rgba(black, 0.29), inset 0 0 0 1px $green
+      color: white
+      .switch-rail
+        transform: translate3d(0, 0, 0)

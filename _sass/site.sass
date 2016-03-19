@@ -1,0 +1,277 @@
+.header
+  height: 60px
+  left: 0
+  position: absolute
+  text-align: center
+  top: 20px
+  width: 100%
+  z-index: 1
+  +on($desktop)
+    top: 60px
+
+.jt
+  box-shadow: inset 0 0 0 1px $link
+  border-radius: 290486px
+  display: block
+  height: 60px
+  margin: 0 auto
+  position: relative
+  transition: all $speed ease
+  width: 60px
+  &:before
+    +overlay
+    background: $link
+    border-radius: 290486px
+    content: " "
+    display: block
+    opacity: 0
+  span
+    +replace
+    background: $link
+    display: block
+    height: 4px
+    position: absolute
+    transition: all $speed ease
+    width: 4px
+    &.a
+      left: 18px
+      top: 20px
+    &.b
+      left: 22px
+      top: 20px
+    &.c
+      left: 26px
+      top: 20px
+    &.d
+      left: 26px
+      top: 24px
+    &.e
+      left: 26px
+      top: 28px
+    &.f
+      left: 26px
+      top: 32px
+    &.g
+      left: 22px
+      top: 36px
+    &.h
+      left: 18px
+      top: 36px
+    &.i
+      left: 14px
+      top: 32px
+    &.j
+      left: 42px
+      top: 20px
+    &.k
+      left: 38px
+      top: 20px
+    &.l
+      left: 34px
+      top: 20px
+    &.m
+      left: 34px
+      top: 24px
+    &.n
+      left: 34px
+      top: 28px
+    &.o
+      left: 34px
+      top: 32px
+    &.p
+      left: 34px
+      top: 36px
+  &:hover,
+  &.active
+    &:before
+      animation: jelly-pop 1000ms linear both
+    span
+      animation: jelly-pop 1000ms linear both
+      background: white
+      &.a
+        animation-delay: 850ms
+      &.e
+        animation-delay: 100ms
+      &.i
+        animation-delay: 150ms
+      &.m
+        animation-delay: 200ms
+      &.b
+        animation-delay: 250ms
+      &.f
+        animation-delay: 300ms
+      &.j
+        animation-delay: 350ms
+      &.n
+        animation-delay: 400ms
+      &.c
+        animation-delay: 450ms
+      &.g
+        animation-delay: 500ms
+      &.k
+        animation-delay: 550ms
+      &.o
+        animation-delay: 600ms
+      &.d
+        animation-delay: 650ms
+      &.h
+        animation-delay: 700ms
+      &.l
+        animation-delay: 750ms
+      &.p
+        animation-delay: 800ms
+    &:hover
+      box-shadow: inset 0 0 0 30px $link
+    &.active
+      box-shadow: none
+  +on($desktop)
+    float: left
+
+.toggle
+  display: block
+  height: 40px
+  position: absolute
+  top: 10px
+  width: 40px
+  span
+    +replace
+    position: absolute
+  .fa
+    color: $light
+    font-size: 21px
+    line-height: 40px
+  &.toggle-menu
+    left: 20px
+  &.toggle-elsewhere
+    right: 20px
+    .fa
+      font-size: 28px
+  +on($desktop)
+    display: none
+
+.dropdown
+  background: white
+  border-radius: 5px
+  box-shadow: 0 5px 10px rgba(black, 0.2), 0 0 1px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.05)
+  display: none
+  overflow: hidden
+  position: absolute
+  top: 50px
+  li
+    display: inline
+    a
+      border-bottom: 1px solid $border
+      display: block
+      padding: 10px
+    &:last-child
+      a
+        border-bottom: none
+  &.dropdown-menu
+    left: 20px
+    letter-spacing: 0.02em
+    text-align: left
+    li a
+      color: $text
+      padding-right: 40px
+      &:hover,
+      &.active
+        color: $title
+      &.active
+        border-bottom-color: $link
+  &.dropdown-elsewhere
+    font-size: 21px
+    padding: 5px
+    right: 20px
+    width: 140px
+    a
+      border-bottom: none
+      color: $border
+      display: inline-block
+      height: 41px
+      padding: 0
+      text-align: center
+      vertical-align: top
+      width: 40px
+      .fa
+        line-height: 40px
+      &:hover
+        color: white
+      &.github
+        +pop($github)
+      &.instagram
+        +pop($instagram)
+      &.rss
+        +pop($rss)
+      &.hacker-news
+        +pop($hacker-news)
+      &.soundcloud
+        +pop($soundcloud)
+      &.twitter
+        +pop($twitter)
+  +on($desktop)
+    background: none
+    box-shadow: none
+    display: block
+    float: left
+    overflow: visible
+    padding-top: 20px
+    position: relative
+    top: auto
+    li
+      a
+        border-bottom: none
+        float: left
+        padding: 0
+    &.dropdown-menu
+      li a
+        margin-right: 20px
+        padding: 0
+        &:hover,
+        &.active
+          +border
+          &:before
+            bottom: -5px
+        &.active,
+        &.active:hover
+          &:before
+            animation: none
+    &.dropdown-elsewhere
+      float: right
+      padding: 10px 0 0
+      right: 0
+      width: auto
+      li a
+        border-radius: 20px
+        height: 40px
+
+.overlay
+  +overlay
+  background: rgba(black, 0.1)
+  display: none
+  position: fixed
+
+.footer
+  display: none
+
+html.menu-open,
+html.elsewhere-open
+  height: 100%
+  overflow: hidden
+  width: 100%
+  .overlay
+    display: block
+
+html.menu-open
+  .dropdown-menu
+    display: block
+
+html.elsewhere-open
+  .dropdown-elsewhere
+    display: block
+
++on($desktop)
+  html.menu-open,
+  html.elsewhere-open
+    height: auto
+    overflow: visible
+    width: auto

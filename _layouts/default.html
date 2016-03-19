@@ -1,0 +1,59 @@
+<!doctype html>
+<html ⚡>
+  {% include head.html %}
+  <body>
+    <header class="header">
+      <div class="container">
+        <a class="jt active" href="/">
+          <span class="a">J</span>
+          <span class="b">e</span>
+          <span class="c">r</span>
+          <span class="d">e</span>
+          <span class="e">m</span>
+          <span class="f">y</span>
+          <span class="g"></span>
+          <span class="h">G</span>
+          <span class="i">.</span>
+          <span class="j"></span>
+          <span class="k">T</span>
+          <span class="l">h</span>
+          <span class="m">o</span>
+          <span class="n">m</span>
+          <span class="o">a</span>
+          <span class="p">s</span>
+        </a>
+
+        <a id="toggle-menu" class="toggle toggle-menu" data-target="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <a id="toggle-elsewhere" class="toggle toggle-elsewhere" data-target="elsewhere">
+          <span></span>
+          <span></span>
+        </a>
+
+        <div id="overlay" class="overlay"></div>
+
+        <ul id="menu" class="dropdown dropdown-menu">
+          <li><a class="active" href="/">J. Thomas</a></li>
+          <li><a href="/articles.html">Articles</a></li>
+          <li><a href="/favourite-websites.html">Favourites</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li id="contact"><a>Email me</a></li>
+        </ul>
+
+        <ul id="elsewhere" class="dropdown dropdown-elsewhere">
+          <li><a class="twitter" href="https://twitter.com/jgthms"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="github" href="https://github.com/jgthms"><i class="fa fa-github"></i></a></li>
+          <li><a class="instagram" href="https://instagram.com/jgthms"><i class="fa fa-instagram"></i></a></li>
+          <li><a class="hacker-news" href="https://news.ycombinator.com/user?id=bbx"><i class="fa fa-hacker-news"></i></a></li>
+          <li><a class="soundcloud" href="https://soundcloud.com/jgthms"><i class="fa fa-soundcloud"></i></a></li>
+          <li><a class="rss" href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+        </ul>
+      </div>
+    </header>
+    {{ content }}
+  </body>
+</html>

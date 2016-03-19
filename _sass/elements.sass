@@ -1,0 +1,430 @@
+.back
+  margin: 20px 0
+  a:hover
+    text-decoration: underline
+  +on($desktop)
+    margin-top: $offset
+
+.category
+  display: block
+
+.clients
+  li
+    display: inline-block
+    height: 40px
+    margin: 7px 10px 0 0
+    vertical-align: top
+    amp-img
+      vertical-align: top
+    &.microsoft
+      padding: 10px 0
+    &.sass
+      amp-img
+        width: 53px
+    &.sony
+      padding: 12px 0
+    &.wordpress
+      padding: 2px 0
+    &.jquery
+      padding: 10px 0 6px
+    &.bootstrap
+      padding: 4px
+
+.content
+  color: #4a4a4a
+  line-height: 1.4
+  a
+    border-bottom: 1px solid
+    &:hover
+      background: $link
+      color: white
+    &:visited
+      color: $visited
+  li + li
+    margin-top: 0.5em
+  h2,
+  h3
+    color: $title
+    font-size: $size-h2
+    font-weight: bold
+    line-height: 1.125
+    margin-top: 60px
+    position: relative
+    a
+      border-bottom: none
+      font-size: $size-h2-link
+      margin-right: 10px
+      +on($desktop)
+        position: absolute
+        right: 100%
+  h3
+    font-size: $size-h3
+    a
+      font-size: $size-h3
+  p
+    margin: 20px 0
+    &:last-child
+      margin-bottom: 0
+    &.note
+      background: hsl(217, 86%, 96%)
+      color: $text
+      font-size: $size-default
+      padding: 20px
+      code
+        background: $text
+        font-size: 14px
+        padding-bottom: 2px
+  ol
+    list-style: decimal outside
+    margin: 20px
+  ul
+    list-style: disc outside
+    margin: 20px
+  figure
+    background: $white
+    margin: 40px
+    padding: 20px
+    text-align: center
+    img
+      display: inline-block
+      vertical-align: top
+  figcaption
+    color: $subtitle
+    font-size: $size-small
+    margin-top: 20px
+  blockquote
+    background: $white
+    border-left: 4px solid #db4e44
+    color: #7a7a7a
+    font-style: italic
+    margin: 40px 0
+    padding: 20px 40px
+    p
+      margin: 0
+  table
+    background: hsl(0, 0%, 99%)
+    box-shadow: 0 1px 2px rgba(black, 0.05)
+    font-size: $size-small
+    width: 100%
+    th,
+    td
+      border: 1px solid hsl(0, 0%, 90%)
+      padding: 5px
+      text-align: left
+      &.empty
+        background: none
+        border: none
+      code
+        font-size: 14px
+        padding-bottom: 2px
+    thead
+      tr
+        background: hsl(0, 0%, 100%)
+  code,
+  pre
+    background: #222222
+    color: white
+    font-size: $size-small
+    padding: 0 4px 1px
+  code
+    position: relative
+    top: -2px
+  pre
+    padding: 10px
+  +on($desktop)
+    font-size: $size-content-desktop
+
+#non-visited a
+  color: $link
+
+.cover
+  +on($desktop)
+    display: block
+    position: relative
+    img
+      display: block !important
+
+a.cover
+  +on($desktop)
+    &:after
+      +overlay
+      background: black
+      content: ""
+      display: block
+      opacity: 0
+      transition: opacity $speed $easing
+    &:hover
+      &:after
+        opacity: 0.29
+
+.device
+  background: 0 0 no-repeat
+  position: relative
+  img
+    position: absolute
+  &.imac
+    background-image: url("/images/devices/imac.png")
+    height: 1685px
+    width: 2100px
+    img
+      left: 90px
+      top: 90px
+  &.ipad-h
+    background-image: url("/images/devices/ipad-h.png")
+    height: 891px
+    width: 1260px
+    img
+      left: 118px
+      top: 61px
+  &.ipad-v
+    background-image: url("/images/devices/ipad-v.png")
+    height: 1260px
+    width: 891px
+    img
+      left: 62px
+      top: 118px
+  &.macbook-air
+    background-image: url("/images/devices/macbook-air.png")
+    height: 1132px
+    width: 1970px
+    img
+      left: 266px
+      top: 83px
+
+.heading
+  margin: $offset
+  text-align: center
+  h1,
+  h2
+    line-height: 1
+  h1
+    color: $title
+    font-size: $size-h1
+    font-weight: bold
+  h2
+    color: $subtitle
+    font-size: $size-h2
+    font-weight: 400
+    font-style: italic
+    margin-top: 10px
+  +on($desktop)
+    h1
+      font-size: $size-h1-desktop
+    h2
+      font-size: $size-h2-desktop
+
+.follow
+  text-align: center
+  a
+    border-radius: 290486px
+    color: $border
+    display: inline-block
+    height: 80px
+    margin-top: 20px
+    vertical-align: top
+    width: 80px
+    .fa
+      font-size: 42px
+      line-height: 80px
+    &.twitter
+      +pop($twitter)
+      color: $twitter
+      &:hover
+        color: white
+    &.github
+      +pop($github)
+      color: $github
+      &:hover
+        color: white
+
+.icons
+  li
+    display: inline-block
+    font-size: 28px
+    margin-right: 10px
+    vertical-align: top
+
+.introduction
+  @extend .subtitle
+
+.line-drawing
+  display: none
+  transition: opacity 0.5s
+  path
+    fill: none
+    stroke: $black
+    stroke-width: 1
+    &.line-round
+      stroke-linecap: round
+  +on($desktop)
+    background: white
+    display: block
+    margin-top: -300px
+    mix-blend-mode: screen
+    position: absolute
+    right: -25%
+    top: 50%
+
+.link
+  a:hover
+    text-decoration: underline
+
+.pagination
+  margin-top: 20px
+  a
+    +button
+    padding-top: 15px
+    & + a
+      margin-top: 20px
+    &[rel="next"]
+      display: none
+    strong
+      transition: all $speed $easing
+  +on($desktop)
+    display: flex
+    justify-content: space-between
+    a
+      & + a
+        margin-top: 0
+      &[rel="next"]
+        display: block
+        margin-right: 20px
+      &[rel="previous"]
+        flex: 1
+        margin-right: 20px
+
+.period
+  background: white
+  border-top: 1px solid $link
+  color: $link
+  display: block
+  letter-spacing: 2px
+  padding: 10px
+  right: 0
+  text-transform: uppercase
+  &.year
+    padding-top: 20px
+  &.season-win
+    border-top-color: #a9caf1
+    color: #a9caf1
+  &.season-spr
+    border-top-color: #c1ea95
+    color: #c1ea95
+  &.season-sum
+    border-top-color: #fbd596
+    color: #fbd596
+  &.season-aut
+    border-top-color: #c8af99
+    color: #c8af99
+  +on($desktop)
+    border-top: 1px solid $link
+    color: $link
+    left: 80px
+    position: absolute
+    width: 80px
+    &.year
+      left: 0
+      padding-top: 10px
+      z-index: 1
+    &.affix
+      left: 50%
+      margin-left: -390px
+      position: fixed
+      top: 0
+      &.year
+        margin-left: -470px
+
+.permalink
+  +overlay
+
+.rank
+  background: $link
+  border-radius: 290486px
+  color: white
+  display: inline-block
+  height: 40px
+  line-height: 40px
+  text-align: center
+  vertical-align: top
+  width: 40px
+  +on($desktop)
+    font-size: $size-h2
+    height: 60px
+    line-height: 60px
+    width: 60px
+
+.subtitle
+  color: $subtitle
+  line-height: 1.125
+  a
+    color: $subtitle
+
+.tabs
+  padding-top: 10px
+  a
+    +button
+    display: inline-block
+    margin: 10px 5px 0
+    padding: 10px 15px
+    text-align: center
+    vertical-align: top
+    &:hover
+      background: none
+      border-color: $black
+      color: $black
+    &.active
+      background: $link
+      border-color: $link
+      color: white
+
+.title
+  color: $title
+  font-size: $size-h2
+  line-height: 1
+  transition: font-size $speed $easing
+  strong
+    color: $title
+  a
+    transition-duration: $speed / 2
+    &:hover
+      padding: 2px 5px
+
+.topics
+  @extend .clients
+
+.tools
+  @extend .clients
+
+.yolo
+  background: $background
+  border-radius: 3px
+  margin-top: $offset
+  padding: 20px
+  .fa
+    color: $twitter
+    font-size: 28px
+    float: right
+    line-height: 32px
+    margin-left: 20px
+  a
+    border: 1px solid $twitter
+    border-radius: 3px
+    color: $twitter
+    display: inline-block
+    line-height: 20px
+    margin-top: 10px
+    padding: 5px 10px
+    vertical-align: top
+    &:hover
+      background: $twitter
+      color: white
+  +on($desktop)
+    padding-left: 30px
+    br
+      display: none
+    span
+      display: inline-block
+      padding: 6px 0
+      vertical-align: top
+    a
+      margin: 0 0 0 10px
